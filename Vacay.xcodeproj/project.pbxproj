@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D81217CB17448656007746AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81217CA17448656007746AC /* UIKit.framework */; };
+		D81217CD17448656007746AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81217CC17448656007746AC /* Foundation.framework */; };
+		D81217CF17448656007746AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81217CE17448656007746AC /* CoreGraphics.framework */; };
+		D81217D517448656007746AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D81217D317448656007746AC /* InfoPlist.strings */; };
+		D81217D717448656007746AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D81217D617448656007746AC /* main.m */; };
+		D81217DB17448656007746AC /* VAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81217DA17448656007746AC /* VAAppDelegate.m */; };
+		D81217DD17448656007746AC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D81217DC17448656007746AC /* Default.png */; };
+		D81217DF17448656007746AC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D81217DE17448656007746AC /* Default@2x.png */; };
+		D81217E117448656007746AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D81217E017448656007746AC /* Default-568h@2x.png */; };
+		D81217E417448656007746AC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81217E217448656007746AC /* MainStoryboard.storyboard */; };
+		D81217E717448656007746AC /* VAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81217E617448656007746AC /* VAViewController.m */; };
+		D81217EF17448657007746AC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81217EE17448657007746AC /* SenTestingKit.framework */; };
+		D81217F017448657007746AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81217CA17448656007746AC /* UIKit.framework */; };
+		D81217F117448657007746AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81217CC17448656007746AC /* Foundation.framework */; };
+		D81217F917448657007746AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D81217F717448657007746AC /* InfoPlist.strings */; };
+		D81217FC17448657007746AC /* VacayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81217FB17448657007746AC /* VacayTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D81217F217448657007746AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D81217BF17448656007746AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D81217C617448656007746AC;
+			remoteInfo = Vacay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D81217C717448656007746AC /* Vacay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vacay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D81217CA17448656007746AC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D81217CC17448656007746AC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D81217CE17448656007746AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D81217D217448656007746AC /* Vacay-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Vacay-Info.plist"; sourceTree = "<group>"; };
+		D81217D417448656007746AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D81217D617448656007746AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D81217D817448656007746AC /* Vacay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vacay-Prefix.pch"; sourceTree = "<group>"; };
+		D81217D917448656007746AC /* VAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAAppDelegate.h; sourceTree = "<group>"; };
+		D81217DA17448656007746AC /* VAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAAppDelegate.m; sourceTree = "<group>"; };
+		D81217DC17448656007746AC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D81217DE17448656007746AC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D81217E017448656007746AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D81217E317448656007746AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		D81217E517448656007746AC /* VAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAViewController.h; sourceTree = "<group>"; };
+		D81217E617448656007746AC /* VAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAViewController.m; sourceTree = "<group>"; };
+		D81217ED17448657007746AC /* VacayTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VacayTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D81217EE17448657007746AC /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D81217F617448657007746AC /* VacayTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VacayTests-Info.plist"; sourceTree = "<group>"; };
+		D81217F817448657007746AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D81217FA17448657007746AC /* VacayTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VacayTests.h; sourceTree = "<group>"; };
+		D81217FB17448657007746AC /* VacayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VacayTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D81217C417448656007746AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D81217CB17448656007746AC /* UIKit.framework in Frameworks */,
+				D81217CD17448656007746AC /* Foundation.framework in Frameworks */,
+				D81217CF17448656007746AC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81217E917448657007746AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D81217EF17448657007746AC /* SenTestingKit.framework in Frameworks */,
+				D81217F017448657007746AC /* UIKit.framework in Frameworks */,
+				D81217F117448657007746AC /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D81217BE17448656007746AC = {
+			isa = PBXGroup;
+			children = (
+				D81217D017448656007746AC /* Vacay */,
+				D81217F417448657007746AC /* VacayTests */,
+				D81217C917448656007746AC /* Frameworks */,
+				D81217C817448656007746AC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D81217C817448656007746AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D81217C717448656007746AC /* Vacay.app */,
+				D81217ED17448657007746AC /* VacayTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D81217C917448656007746AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D81217CA17448656007746AC /* UIKit.framework */,
+				D81217CC17448656007746AC /* Foundation.framework */,
+				D81217CE17448656007746AC /* CoreGraphics.framework */,
+				D81217EE17448657007746AC /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D81217D017448656007746AC /* Vacay */ = {
+			isa = PBXGroup;
+			children = (
+				D81217D917448656007746AC /* VAAppDelegate.h */,
+				D81217DA17448656007746AC /* VAAppDelegate.m */,
+				D81217E217448656007746AC /* MainStoryboard.storyboard */,
+				D81217E517448656007746AC /* VAViewController.h */,
+				D81217E617448656007746AC /* VAViewController.m */,
+				D81217D117448656007746AC /* Supporting Files */,
+			);
+			path = Vacay;
+			sourceTree = "<group>";
+		};
+		D81217D117448656007746AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D81217D217448656007746AC /* Vacay-Info.plist */,
+				D81217D317448656007746AC /* InfoPlist.strings */,
+				D81217D617448656007746AC /* main.m */,
+				D81217D817448656007746AC /* Vacay-Prefix.pch */,
+				D81217DC17448656007746AC /* Default.png */,
+				D81217DE17448656007746AC /* Default@2x.png */,
+				D81217E017448656007746AC /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D81217F417448657007746AC /* VacayTests */ = {
+			isa = PBXGroup;
+			children = (
+				D81217FA17448657007746AC /* VacayTests.h */,
+				D81217FB17448657007746AC /* VacayTests.m */,
+				D81217F517448657007746AC /* Supporting Files */,
+			);
+			path = VacayTests;
+			sourceTree = "<group>";
+		};
+		D81217F517448657007746AC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D81217F617448657007746AC /* VacayTests-Info.plist */,
+				D81217F717448657007746AC /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D81217C617448656007746AC /* Vacay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D81217FF17448657007746AC /* Build configuration list for PBXNativeTarget "Vacay" */;
+			buildPhases = (
+				D81217C317448656007746AC /* Sources */,
+				D81217C417448656007746AC /* Frameworks */,
+				D81217C517448656007746AC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vacay;
+			productName = Vacay;
+			productReference = D81217C717448656007746AC /* Vacay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D81217EC17448657007746AC /* VacayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D812180217448657007746AC /* Build configuration list for PBXNativeTarget "VacayTests" */;
+			buildPhases = (
+				D81217E817448657007746AC /* Sources */,
+				D81217E917448657007746AC /* Frameworks */,
+				D81217EA17448657007746AC /* Resources */,
+				D81217EB17448657007746AC /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D81217F317448657007746AC /* PBXTargetDependency */,
+			);
+			name = VacayTests;
+			productName = VacayTests;
+			productReference = D81217ED17448657007746AC /* VacayTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D81217BF17448656007746AC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VA;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Beard, Beard & Beard";
+			};
+			buildConfigurationList = D81217C217448656007746AC /* Build configuration list for PBXProject "Vacay" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D81217BE17448656007746AC;
+			productRefGroup = D81217C817448656007746AC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D81217C617448656007746AC /* Vacay */,
+				D81217EC17448657007746AC /* VacayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D81217C517448656007746AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D81217D517448656007746AC /* InfoPlist.strings in Resources */,
+				D81217DD17448656007746AC /* Default.png in Resources */,
+				D81217DF17448656007746AC /* Default@2x.png in Resources */,
+				D81217E117448656007746AC /* Default-568h@2x.png in Resources */,
+				D81217E417448656007746AC /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81217EA17448657007746AC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D81217F917448657007746AC /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D81217EB17448657007746AC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D81217C317448656007746AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D81217D717448656007746AC /* main.m in Sources */,
+				D81217DB17448656007746AC /* VAAppDelegate.m in Sources */,
+				D81217E717448656007746AC /* VAViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D81217E817448657007746AC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D81217FC17448657007746AC /* VacayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D81217F317448657007746AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D81217C617448656007746AC /* Vacay */;
+			targetProxy = D81217F217448657007746AC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D81217D317448656007746AC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D81217D417448656007746AC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D81217E217448656007746AC /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D81217E317448656007746AC /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		D81217F717448657007746AC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D81217F817448657007746AC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D81217FD17448657007746AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D81217FE17448657007746AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D812180017448657007746AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vacay/Vacay-Prefix.pch";
+				INFOPLIST_FILE = "Vacay/Vacay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D812180117448657007746AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vacay/Vacay-Prefix.pch";
+				INFOPLIST_FILE = "Vacay/Vacay-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D812180317448657007746AC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vacay.app/Vacay";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vacay/Vacay-Prefix.pch";
+				INFOPLIST_FILE = "VacayTests/VacayTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D812180417448657007746AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Vacay.app/Vacay";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Vacay/Vacay-Prefix.pch";
+				INFOPLIST_FILE = "VacayTests/VacayTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D81217C217448656007746AC /* Build configuration list for PBXProject "Vacay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D81217FD17448657007746AC /* Debug */,
+				D81217FE17448657007746AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D81217FF17448657007746AC /* Build configuration list for PBXNativeTarget "Vacay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D812180017448657007746AC /* Debug */,
+				D812180117448657007746AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D812180217448657007746AC /* Build configuration list for PBXNativeTarget "VacayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D812180317448657007746AC /* Debug */,
+				D812180417448657007746AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D81217BF17448656007746AC /* Project object */;
+}
