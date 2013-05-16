@@ -23,6 +23,7 @@
 		D81217F117448657007746AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81217CC17448656007746AC /* Foundation.framework */; };
 		D81217F917448657007746AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D81217F717448657007746AC /* InfoPlist.strings */; };
 		D81217FC17448657007746AC /* VacayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81217FB17448657007746AC /* VacayTests.m */; };
+		D8121807174489EB007746AC /* VAAddMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8121806174489EB007746AC /* VAAddMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		D81217F817448657007746AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D81217FA17448657007746AC /* VacayTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VacayTests.h; sourceTree = "<group>"; };
 		D81217FB17448657007746AC /* VacayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VacayTests.m; sourceTree = "<group>"; };
+		D8121805174489EB007746AC /* VAAddMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAAddMapViewController.h; sourceTree = "<group>"; };
+		D8121806174489EB007746AC /* VAAddMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VAAddMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				D81217D917448656007746AC /* VAAppDelegate.h */,
 				D81217DA17448656007746AC /* VAAppDelegate.m */,
 				D81217E217448656007746AC /* MainStoryboard.storyboard */,
+				D8121805174489EB007746AC /* VAAddMapViewController.h */,
+				D8121806174489EB007746AC /* VAAddMapViewController.m */,
 				D81217E517448656007746AC /* VAViewController.h */,
 				D81217E617448656007746AC /* VAViewController.m */,
 				D81217D117448656007746AC /* Supporting Files */,
@@ -274,6 +279,7 @@
 				D81217D717448656007746AC /* main.m in Sources */,
 				D81217DB17448656007746AC /* VAAppDelegate.m in Sources */,
 				D81217E717448656007746AC /* VAViewController.m in Sources */,
+				D8121807174489EB007746AC /* VAAddMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +460,7 @@
 				D812180117448657007746AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D812180217448657007746AC /* Build configuration list for PBXNativeTarget "VacayTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +469,7 @@
 				D812180417448657007746AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
