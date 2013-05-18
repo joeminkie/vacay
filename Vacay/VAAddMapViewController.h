@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <KML/KML.h>
 
 @interface VAAddMapViewController : UIViewController
+
+@property (nonatomic, weak) KMLRoot *kml;
+@property (nonatomic, weak) KMLDocument *document;
 
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *cancelButton;
 @property (nonatomic, weak) IBOutlet UITextField *urlField;
