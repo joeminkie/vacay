@@ -29,8 +29,17 @@
     [super viewDidLoad];
     
     NSLog(@"MapListTableViewConroller viewDidLoad");
-        
+    
+    /*
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"maps"];
+    [defaults removeObjectForKey:@"mapInfo"];
+    [defaults synchronize];
+    */
+    
     Maps *m = [Maps init];
+    
+    NSLog(@"Maps maps: %@", m.maps);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
