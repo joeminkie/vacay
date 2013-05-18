@@ -24,6 +24,7 @@
 		D81217F917448657007746AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D81217F717448657007746AC /* InfoPlist.strings */; };
 		D81217FC17448657007746AC /* VacayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81217FB17448657007746AC /* VacayTests.m */; };
 		D8121807174489EB007746AC /* VAAddMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8121806174489EB007746AC /* VAAddMapViewController.m */; };
+		D8374CC81747F14C00282071 /* KML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8374CC71747F14C00282071 /* KML.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		D81217FB17448657007746AC /* VacayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VacayTests.m; sourceTree = "<group>"; };
 		D8121805174489EB007746AC /* VAAddMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAAddMapViewController.h; sourceTree = "<group>"; };
 		D8121806174489EB007746AC /* VAAddMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VAAddMapViewController.m; sourceTree = "<group>"; };
+		D8374CC71747F14C00282071 /* KML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KML.framework; path = Vacay/vendor/KML.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8374CC81747F14C00282071 /* KML.framework in Frameworks */,
 				D81217CB17448656007746AC /* UIKit.framework in Frameworks */,
 				D81217CD17448656007746AC /* Foundation.framework in Frameworks */,
 				D81217CF17448656007746AC /* CoreGraphics.framework in Frameworks */,
@@ -109,6 +112,7 @@
 		D81217C917448656007746AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8374CC71747F14C00282071 /* KML.framework */,
 				D81217CA17448656007746AC /* UIKit.framework */,
 				D81217CC17448656007746AC /* Foundation.framework */,
 				D81217CE17448656007746AC /* CoreGraphics.framework */,
@@ -123,6 +127,7 @@
 				D81217D917448656007746AC /* VAAppDelegate.h */,
 				D81217DA17448656007746AC /* VAAppDelegate.m */,
 				D81217E217448656007746AC /* MainStoryboard.storyboard */,
+				D8374CCC1747F2A200282071 /* Models */,
 				D8121805174489EB007746AC /* VAAddMapViewController.h */,
 				D8121806174489EB007746AC /* VAAddMapViewController.m */,
 				D81217E517448656007746AC /* VAViewController.h */,
@@ -171,6 +176,13 @@
 			children = (
 			);
 			name = vendor;
+			sourceTree = "<group>";
+		};
+		D8374CCC1747F2A200282071 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +408,10 @@
 		D812180017448657007746AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vacay/vendor\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vacay/Vacay-Prefix.pch";
 				INFOPLIST_FILE = "Vacay/Vacay-Info.plist";
@@ -407,6 +423,10 @@
 		D812180117448657007746AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Vacay/vendor\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vacay/Vacay-Prefix.pch";
 				INFOPLIST_FILE = "Vacay/Vacay-Info.plist";
