@@ -18,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        
     }
     return self;
 }
@@ -32,10 +32,44 @@
 
 -(IBAction)addMap:(id)sender {
     
-    NSString *url = self.urlField.text;
+    [self showLoader];
+    
+    NSURL *url = [NSURL URLWithString:self.urlField.text];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
     NSLog(@"Add URL: %@", url);
     
+    NSOperationQueue *queue = [NSOperationQueue mainQueue];
+    [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
+        [self dismissLoader];
+        
+        if (data) {
+            NSLog(@"success");
+            [self saveData:data];
+        } else {
+            NSLog(@"error");
+        }
+        
+    }];
 }
+
+-(void)saveData:(NSData *)data {
+    NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@", s);
+}
+
+
+-(void)showLoader {
+    // TODO
+}
+
+-(void)dismissLoader {
+    // TODO
+}
+
+
 
 
 
