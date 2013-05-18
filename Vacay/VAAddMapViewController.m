@@ -58,6 +58,27 @@
     NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     
     NSLog(@"%@", s);
+    
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    NSError *error = nil;
+    NSURL *supportURL = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:&error];
+    NSURL *KMLdirectory = [supportURL URLByAppendingPathComponent:@"KML"];
+    error = nil;
+    BOOL directoryWasCreated = [fileManager createDirectoryAtURL:KMLdirectory withIntermediateDirectories:YES attributes:nil error:&error];
+    if (directoryWasCreated == NO) {
+        NSLog(@"error creating directory");
+    } else {
+        error = nil;
+        NSArray *files = [fileManager contentsOfDirectoryAtURL:KMLdirectory includingPropertiesForKeys:nil options:0 error:&error];
+        NSLog(@"files: %@", [files valueForKey:@"lastPathComponent"]);
+        BOOL wroteFile = [data writeToURL:[KMLdirectory URLByAppendingPathComponent:@"test.kml"] atomically:YES];
+        if (wroteFile) {
+            NSLog(@"wrote file");
+        } else {
+            NSLog(@"error writing file");
+        }
+    }
+    
 }
 
 
