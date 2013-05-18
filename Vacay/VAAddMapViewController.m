@@ -45,9 +45,7 @@
         
         if (data) {
             
-            Maps *maps = [Maps init];
-            
-            if([maps addMapFromURL:url withData:data]) {
+            if([[Maps init] addMapFromURL:url withData:data]) {
                 [self closeAddMapView:nil];
             }
             

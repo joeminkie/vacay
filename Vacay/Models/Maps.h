@@ -12,10 +12,9 @@
 @interface Maps : NSObject
 
 +(Maps *)init;
-
 -(BOOL)addMapFromURL:(NSURL *)url withData:(NSData *)data;
 
-@property (nonatomic, weak) NSMutableDictionary *maps;
+@property (nonatomic, strong) NSArray *maps;
 
 @end
 

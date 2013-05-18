@@ -7,6 +7,7 @@
 //
 
 #import "Maps.h"
+#include <stdlib.h>
 
 @implementation Maps
 
@@ -47,6 +48,25 @@
             NSLog(@"files: %@", [files valueForKey:@"lastPathComponent"]);
             BOOL wroteFile = [data writeToURL:[KMLdirectory URLByAppendingPathComponent:[document.name stringByAppendingString:@".kml"]] atomically:YES];
             if (wroteFile) {
+                
+                // add or update the maps array with the new map
+                
+                NSDictionary *mapInfo = @{@"name": document.name, @"url": url};
+                
+                BOOL wasUpdated = NO;
+                NSMutableArray *a = [[NSMutableArray alloc] init];
+                for (NSDictionary *d in self.maps) {
+                    if ([[d valueForKey:@"name"] isEqualToString:[mapInfo valueForKey:@"name"]]) {
+                        [a addObject:mapInfo];
+                        wasUpdated = YES;
+                    } else {
+                        [a addObject:d];
+                    }
+                }
+                if (wasUpdated == NO) {
+                    [a addObject:mapInfo];
+                }
+                self.maps = a;
                 
                 return YES;
                 
