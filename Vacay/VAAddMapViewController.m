@@ -7,7 +7,7 @@
 //
 
 #import "VAAddMapViewController.h"
-#import "VAKML.h"
+#import "Maps.h"
 
 @interface VAAddMapViewController ()
 
@@ -45,46 +45,22 @@
         
         if (data) {
             
-            // parse the KML and create a document for it to make it easier to use
-            self.kml = [KMLParser parseKMLWithData:data];
-            if (self.kml.feature && [self.kml.feature isKindOfClass:[KMLDocument class]]) {
-                self.document = (KMLDocument *)self.kml.feature;
-            }
+            Maps *maps = [Maps init];
             
-            [self saveData:data];
+            if([maps addMapFromURL:url withData:data]) {
+                [self closeAddMapView:nil];
+            }
             
         } else {
             NSLog(@"connection error");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"There was an retrieveing the file from the given URL" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alert show];
         }
         
     }];
 }
 
--(void)saveData:(NSData *)data {
-    
-    // use/create the Application Support directory
-    NSFileManager *fileManager = [[NSFileManager alloc] init];
-    NSError *error = nil;
-    NSURL *supportURL = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:&error];
-    NSURL *KMLdirectory = [supportURL URLByAppendingPathComponent:@"KML"];
-    error = nil;
-    BOOL directoryWasCreated = [fileManager createDirectoryAtURL:KMLdirectory withIntermediateDirectories:YES attributes:nil error:&error];
-    if (directoryWasCreated == NO) {
-        NSLog(@"error creating directory");
-    } else {
-        
-        // save the kml file to disk using it's name as the file name
-        error = nil;
-        NSArray *files = [fileManager contentsOfDirectoryAtURL:KMLdirectory includingPropertiesForKeys:nil options:0 error:&error];
-        NSLog(@"files: %@", [files valueForKey:@"lastPathComponent"]);
-        BOOL wroteFile = [data writeToURL:[KMLdirectory URLByAppendingPathComponent:[self.document.name stringByAppendingString:@".kml"]] atomically:YES];
-        if (wroteFile) {
-            NSLog(@"wrote file");
-        } else {
-            NSLog(@"error writing file");
-        }
-    }
-}
+
 
 
 -(void)showLoader {
