@@ -11,6 +11,8 @@
 
 @interface VAMapListTableViewController ()
 
+@property (nonatomic, weak) Maps *MapModel;
+
 @end
 
 @implementation VAMapListTableViewController
@@ -37,9 +39,9 @@
     [defaults synchronize];
     */
     
-    Maps *m = [Maps init];
+    self.MapModel = [Maps init];
     
-    NSLog(@"Maps maps: %@", m.maps);
+    NSLog(@"Maps maps: %@", self.MapModel.maps);
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -58,25 +60,25 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    NSLog(@"rows: %li", (unsigned long)[self.MapModel.maps count]);
+    return [self.MapModel.maps count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"basic"];
+	NSDictionary *map = [self.MapModel.maps objectAtIndex:indexPath.row];
+    KMLDocument *doc = map[@"document"];
+	cell.textLabel.text = doc.name;
+	cell.detailTextLabel.text = doc.descriptionValue;
     return cell;
 }
 
