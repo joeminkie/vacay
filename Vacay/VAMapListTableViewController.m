@@ -7,6 +7,7 @@
 //
 
 #import "VAMapListTableViewController.h"
+#import "Maps.h"
 
 @interface VAMapListTableViewController ()
 
@@ -28,6 +29,8 @@
     [super viewDidLoad];
     
     NSLog(@"MapListTableViewConroller viewDidLoad");
+        
+    Maps *m = [Maps init];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

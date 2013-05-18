@@ -9,6 +9,12 @@
 #import "Maps.h"
 #include <stdlib.h>
 
+@interface Maps()
+
+-(void)initMapsArray;
+
+@end
+
 @implementation Maps
 
 +(Maps *)init {
@@ -16,9 +22,23 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         m = [Maps new];
+        if (m.maps == nil) {
+            [m initMapsArray];
+        }
     });
+    
     return m;
 }
+
+-(void)initMapsArray {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSArray *a = [defaults objectForKey:@"maps"];
+    NSLog(@"defaults: %@", a);
+    
+    self.maps = a;
+}
+
 
 -(BOOL)addMapFromURL:(NSURL *)url withData:(NSData *)data {
     
@@ -51,7 +71,7 @@
                 
                 // add or update the maps array with the new map
                 
-                NSDictionary *mapInfo = @{@"name": document.name, @"url": url};
+                NSDictionary *mapInfo = @{@"name": document.name, @"url": [url absoluteString]};
                 
                 BOOL wasUpdated = NO;
                 NSMutableArray *a = [[NSMutableArray alloc] init];
@@ -67,6 +87,10 @@
                     [a addObject:mapInfo];
                 }
                 self.maps = a;
+                
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:self.maps forKey:@"maps"];
+                [defaults synchronize];
                 
                 return YES;
                 
