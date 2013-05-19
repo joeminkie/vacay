@@ -7,7 +7,7 @@
 //
 
 #import "VAMapListTableViewController.h"
-#import "VALocationListViewController.h"
+#import "VAViewController.h"
 #import "Maps.h"
 
 @interface VAMapListTableViewController ()
@@ -55,7 +55,7 @@
     if ([segue.identifier isEqualToString:@"locationListSeque"]) {
         NSIndexPath *path = [self.tableView indexPathForSelectedRow];
         
-        VALocationListViewController *listView = (VALocationListViewController *)[segue destinationViewController];
+        VAViewController *listView = (VAViewController *)[segue destinationViewController];
         listView.mapInfo = [self.MapModel.maps objectAtIndex:path.row];
     }
 }

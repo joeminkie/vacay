@@ -34,7 +34,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="lIW-9C-WjU" kind="push" identifier="locationListSeque" id="jl6-Bc-d4F"/>
+                                    <segue destination="Ssp-Jh-Q18" kind="push" identifier="locationListSeque" id="HiC-sq-g3q"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -53,88 +53,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dKh-hc-niJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="527" y="58"/>
-        </scene>
-        <!--Location List View Controller-->
-        <scene sceneID="pgV-fk-OEq">
-            <objects>
-                <tableViewController id="lIW-9C-WjU" customClass="VALocationListViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="ap3-tT-wrh">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="locationCell" textLabel="d2P-lL-ShH" detailTextLabel="O4Q-cE-Cy0" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="2y2-wT-OrL">
-                                <rect key="frame" x="0.0" y="22" width="320" height="60"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2P-lL-ShH">
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O4Q-cE-Cy0">
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <connections>
-                                    <segue destination="vID-wo-CpJ" kind="push" identifier="singleMapSegue" trigger="accessoryAction" id="5pQ-Dl-M73"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="lIW-9C-WjU" id="wsc-5z-Owp"/>
-                            <outlet property="delegate" destination="lIW-9C-WjU" id="egG-av-cYh"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="aVd-Su-KOq">
-                        <barButtonItem key="rightBarButtonItem" title="Map" id="V9Q-9p-Qf4">
-                            <connections>
-                                <segue destination="vID-wo-CpJ" kind="push" identifier="fullMapSegue" id="rKv-c5-JoF"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O3j-g3-RY0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="970" y="-184"/>
-        </scene>
-        <!--Map View Controller-->
-        <scene sceneID="gU0-cK-6J6">
-            <objects>
-                <viewController id="vID-wo-CpJ" customClass="VAMapViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="A6X-2h-TPW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ygL-It-fiY">
-                                <connections>
-                                    <outlet property="delegate" destination="vID-wo-CpJ" id="9r5-3i-ZOw"/>
-                                </connections>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ygL-It-fiY" firstAttribute="top" secondItem="A6X-2h-TPW" secondAttribute="top" type="default" id="3LZ-jZ-6cK"/>
-                            <constraint firstItem="ygL-It-fiY" firstAttribute="leading" secondItem="A6X-2h-TPW" secondAttribute="leading" type="default" id="ard-3S-wur"/>
-                            <constraint firstItem="ygL-It-fiY" firstAttribute="trailing" secondItem="A6X-2h-TPW" secondAttribute="trailing" type="default" id="lsA-Cv-zSS"/>
-                            <constraint firstItem="ygL-It-fiY" firstAttribute="bottom" secondItem="A6X-2h-TPW" secondAttribute="bottom" type="default" id="yEA-dy-Rkl"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="bf9-dI-Zpx"/>
-                    <connections>
-                        <outlet property="mapView" destination="ygL-It-fiY" id="iRJ-Tl-hlv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AUX-fE-hl7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1413" y="-184"/>
         </scene>
         <!--Add Map View Controller-->
         <scene sceneID="vCT-Ed-5bh">
@@ -219,6 +137,93 @@
             </objects>
             <point key="canvasLocation" x="63" y="58"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="TQZ-Rs-oxC">
+            <objects>
+                <viewController id="Ssp-Jh-Q18" customClass="VAViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TjG-np-5f5">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ygL-It-fiY">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="548" id="YvF-dJ-JgF"/>
+                                </constraints>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vbr-sC-FZ7">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="locationCell" textLabel="RoH-A1-cHp" detailTextLabel="JxO-nP-BQT" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="t5y-aq-wbT">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RoH-A1-cHp">
+                                                    <rect key="frame" x="10" y="10" width="38" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JxO-nP-BQT">
+                                                    <rect key="frame" x="10" y="32" width="47" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ssp-Jh-Q18" id="wJw-GR-c0H"/>
+                                    <outlet property="delegate" destination="Ssp-Jh-Q18" id="X0i-di-jjJ"/>
+                                </connections>
+                            </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ey-Rf-Qh0">
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="GG7-ji-Ta3"/>
+                                    <barButtonItem title="Map" id="ATl-aI-cXg"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Vbr-sC-FZ7" firstAttribute="leading" secondItem="TjG-np-5f5" secondAttribute="leading" type="default" id="5ZK-M9-tbg"/>
+                            <constraint firstItem="ygL-It-fiY" firstAttribute="leading" secondItem="TjG-np-5f5" secondAttribute="leading" type="default" id="CSK-ri-Q5x"/>
+                            <constraint firstItem="5ey-Rf-Qh0" firstAttribute="top" secondItem="Vbr-sC-FZ7" secondAttribute="bottom" type="default" id="FCG-ze-Tvv"/>
+                            <constraint firstItem="5ey-Rf-Qh0" firstAttribute="bottom" secondItem="TjG-np-5f5" secondAttribute="bottom" type="default" id="H9e-jE-C3M"/>
+                            <constraint firstItem="Vbr-sC-FZ7" firstAttribute="top" secondItem="TjG-np-5f5" secondAttribute="top" type="default" id="SWf-h2-wr1"/>
+                            <constraint firstItem="Vbr-sC-FZ7" firstAttribute="trailing" secondItem="TjG-np-5f5" secondAttribute="trailing" type="default" id="ac2-vY-g7f"/>
+                            <constraint firstItem="5ey-Rf-Qh0" firstAttribute="trailing" secondItem="TjG-np-5f5" secondAttribute="trailing" type="default" id="du6-u8-8A2"/>
+                            <constraint firstItem="5ey-Rf-Qh0" firstAttribute="leading" secondItem="TjG-np-5f5" secondAttribute="leading" type="default" id="e6h-qL-XkZ"/>
+                            <constraint firstItem="ygL-It-fiY" firstAttribute="trailing" secondItem="TjG-np-5f5" secondAttribute="trailing" type="default" id="ehn-5U-ClC"/>
+                            <constraint firstItem="ygL-It-fiY" firstAttribute="centerY" secondItem="TjG-np-5f5" secondAttribute="centerY" type="default" id="xMH-eJ-81u"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RU2-ae-8Uc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="juD-3a-GCq">
+                            <connections>
+                                <action selector="refreshMapInfo:" destination="Ssp-Jh-Q18" id="KlK-j9-FED"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="flipButton" destination="ATl-aI-cXg" id="ays-vB-hq2"/>
+                        <outlet property="mapView" destination="ygL-It-fiY" id="Z1e-Ho-tH1"/>
+                        <outlet property="refreshButton" destination="juD-3a-GCq" id="pCJ-iV-wOD"/>
+                        <outlet property="tableView" destination="Vbr-sC-FZ7" id="Y1P-ex-QcS"/>
+                        <outlet property="toolbar" destination="5ey-Rf-Qh0" id="OcF-eD-PND"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nyt-b5-meP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="-193"/>
+        </scene>
     </scenes>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
@@ -232,16 +237,19 @@
                 <relationship kind="outlet" name="urlField" candidateClass="UITextField"/>
             </relationships>
         </class>
-        <class className="VALocationListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VALocationListViewController.h"/>
-        </class>
         <class className="VAMapListTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VAMapListTableViewController.h"/>
         </class>
-        <class className="VAMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/VAMapViewController.h"/>
+        <class className="VAViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/VAViewController.h"/>
             <relationships>
+                <relationship kind="action" name="flipView:"/>
+                <relationship kind="action" name="refreshMapInfo:"/>
+                <relationship kind="outlet" name="flipButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="refreshButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
         </class>
     </classes>
@@ -250,7 +258,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="5pQ-Dl-M73"/>
-    </inferredMetricsTieBreakers>
 </document>

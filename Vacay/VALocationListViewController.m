@@ -23,6 +23,7 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
+        
     }
     return self;
 }
@@ -34,6 +35,8 @@
     self.document = [self.mapInfo valueForKey:@"document"];
     
     self.title = self.document.name;
+    
+    self.navigationController.toolbarHidden = NO;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

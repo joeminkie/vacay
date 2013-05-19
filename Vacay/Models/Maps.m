@@ -148,4 +148,13 @@
     return NO;
 }
 
+- (NSDictionary *)refreshMapInfo:(NSDictionary *)info {
+    
+    // TODO
+    
+    NSLog(@"refreshing...");
+    
+    return info;
+}
+
 @end

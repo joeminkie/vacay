@@ -13,6 +13,7 @@
 
 +(Maps *)init;
 -(BOOL)addMapFromURL:(NSURL *)url withData:(NSData *)data;
+-(NSDictionary *)refreshMapInfo:(NSDictionary *)info;
 
 @property (nonatomic, strong) NSArray *maps;
 
