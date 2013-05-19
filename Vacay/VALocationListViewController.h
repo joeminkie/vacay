@@ -10,4 +10,6 @@
 
 @interface VALocationListViewController : UITableViewController
 
+@property (nonatomic, weak) NSDictionary *mapInfo;
+
 @end

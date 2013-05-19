@@ -7,6 +7,7 @@
 //
 
 #import "VAMapListTableViewController.h"
+#import "VALocationListViewController.h"
 #import "Maps.h"
 
 @interface VAMapListTableViewController ()
@@ -34,8 +35,6 @@
 {
     [super viewDidLoad];
     
-    NSLog(@"MapListTableViewConroller viewDidLoad");
-    
     /*
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:@"maps"];
@@ -45,13 +44,20 @@
     
     self.MapModel = [Maps init];
     
-    NSLog(@"Maps maps: %@", self.MapModel.maps);
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"locationListSeque"]) {
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        
+        VALocationListViewController *listView = (VALocationListViewController *)[segue destinationViewController];
+        listView.mapInfo = [self.MapModel.maps objectAtIndex:path.row];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,7 +77,6 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSLog(@"rows: %li", (unsigned long)[self.MapModel.maps count]);
     return [self.MapModel.maps count];
 }
 

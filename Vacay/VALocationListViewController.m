@@ -7,8 +7,11 @@
 //
 
 #import "VALocationListViewController.h"
+#import <KML/KML.h>
 
 @interface VALocationListViewController ()
+
+@property (nonatomic, weak) KMLDocument *document;
 
 @end
 
@@ -26,7 +29,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    self.document = [self.mapInfo valueForKey:@"document"];
+    
+    self.title = self.document.name;
+    
+    NSLog(@"features: %@", self.document.features);
+    NSLog(@"style: %@", self.document.style);
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -50,17 +60,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.document.features count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"locationCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
+    KMLPlacemark *placemark = [self.document.features objectAtIndex:indexPath.row];
+    cell.textLabel.text = placemark.name;
+    cell.detailTextLabel.text = placemark.descriptionValue;
     
     return cell;
 }
