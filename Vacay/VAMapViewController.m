@@ -27,6 +27,23 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    KMLPoint *point = (KMLPoint *)self.placemark.geometry;
+    NSLog(@"point: %@", point);
+    
+    CLLocationCoordinate2D loc = CLLocationCoordinate2DMake(point.coordinate.latitude, point.coordinate.longitude);
+    MKCoordinateSpan span = MKCoordinateSpanMake(.015, .015);
+    MKCoordinateRegion reg = MKCoordinateRegionMake(loc, span);
+    self.mapView.region = reg;
+    
+    //MKAnnotationView mapPoint
+    
+    MKPointAnnotation* annoation = [MKPointAnnotation new];
+    annoation.coordinate = loc;
+    annoation.title = self.placemark.name;
+    annoation.subtitle = self.placemark.descriptionValue;
+    [self.mapView addAnnotation:annoation];
+    
 }
 
 - (void)didReceiveMemoryWarning

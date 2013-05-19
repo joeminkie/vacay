@@ -8,6 +8,7 @@
 
 #import "VALocationListViewController.h"
 #import <KML/KML.h>
+#import "VAMapViewController.h"
 
 @interface VALocationListViewController ()
 
@@ -34,14 +35,20 @@
     
     self.title = self.document.name;
     
-    NSLog(@"features: %@", self.document.features);
-    NSLog(@"style: %@", self.document.style);
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"singleMapSegue"]) {
+        NSIndexPath *path = [self.tableView indexPathForCell:sender];
+        
+        VAMapViewController *mapView = (VAMapViewController *)[segue destinationViewController];
+        mapView.placemark = [self.document.features objectAtIndex:path.row];
+    }
 }
 
 - (void)didReceiveMemoryWarning
