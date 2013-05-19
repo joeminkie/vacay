@@ -27,6 +27,7 @@
 		D8374CC81747F14C00282071 /* KML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8374CC71747F14C00282071 /* KML.framework */; };
 		D8374CD217480CA100282071 /* Maps.m in Sources */ = {isa = PBXBuildFile; fileRef = D8374CD117480CA100282071 /* Maps.m */; };
 		D8374CD517480D1300282071 /* VAMapListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8374CD417480D1300282071 /* VAMapListTableViewController.m */; };
+		D8374CD817486EAE00282071 /* VALocationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8374CD717486EAE00282071 /* VALocationListViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		D8374CD117480CA100282071 /* Maps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Maps.m; path = Models/Maps.m; sourceTree = "<group>"; };
 		D8374CD317480D1300282071 /* VAMapListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAMapListTableViewController.h; sourceTree = "<group>"; };
 		D8374CD417480D1300282071 /* VAMapListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VAMapListTableViewController.m; sourceTree = "<group>"; };
+		D8374CD617486EAE00282071 /* VALocationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VALocationListViewController.h; sourceTree = "<group>"; };
+		D8374CD717486EAE00282071 /* VALocationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VALocationListViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 				D8121806174489EB007746AC /* VAAddMapViewController.m */,
 				D8374CD317480D1300282071 /* VAMapListTableViewController.h */,
 				D8374CD417480D1300282071 /* VAMapListTableViewController.m */,
+				D8374CD617486EAE00282071 /* VALocationListViewController.h */,
+				D8374CD717486EAE00282071 /* VALocationListViewController.m */,
 				D81217E517448656007746AC /* VAViewController.h */,
 				D81217E617448656007746AC /* VAViewController.m */,
 				D812185017449920007746AC /* vendor */,
@@ -312,6 +317,7 @@
 				D8121807174489EB007746AC /* VAAddMapViewController.m in Sources */,
 				D8374CD217480CA100282071 /* Maps.m in Sources */,
 				D8374CD517480D1300282071 /* VAMapListTableViewController.m in Sources */,
+				D8374CD817486EAE00282071 /* VALocationListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
