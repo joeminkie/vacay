@@ -42,7 +42,7 @@
                     <navigationItem key="navigationItem" title="Maps" id="ufE-1R-rhz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6Q1-ky-fOj">
                             <connections>
-                                <segue destination="G0R-E4-qaE" kind="modal" modalTransitionStyle="coverVertical" id="abI-Yd-Dit"/>
+                                <segue destination="G0R-E4-qaE" kind="modal" identifier="addMapSeque" modalTransitionStyle="coverVertical" id="abI-Yd-Dit"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
