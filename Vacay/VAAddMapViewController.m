@@ -58,9 +58,6 @@
     }];
 }
 
-
-
-
 -(void)showLoader {
     // TODO
 }
@@ -69,12 +66,7 @@
     // TODO
 }
 
-
-
-
-
 -(IBAction) closeAddMapView:(id)sender {
-
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
