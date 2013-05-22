@@ -11,6 +11,8 @@
 
 @interface VAViewController ()
 
+@property (strong, nonatomic) MKUserTrackingBarButtonItem *currentLocationButton;
+
 @property (nonatomic, weak) KMLDocument *document;
 @property (nonatomic, weak) Maps *MapModel;
 
@@ -32,6 +34,15 @@
     
     self.title = self.document.name;
     
+    // add the currentLocation button
+    self.currentLocationButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
+    NSMutableArray *toolbarButtons = [NSMutableArray arrayWithArray:self.toolbar.items];
+    [toolbarButtons insertObject:self.currentLocationButton atIndex:0];
+    self.toolbar.items = toolbarButtons;
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
     [self reloadMapAnnotations];
 }
 
@@ -97,7 +108,7 @@
     
     id userLocation = [self.mapView userLocation];
     NSMutableArray *pins = [[NSMutableArray alloc] initWithArray:[self.mapView annotations]];
-    if (userLocation != nil ) {
+    if (userLocation != nil) {
         [pins removeObject:userLocation];
     }
     [self.mapView removeAnnotations:pins];
@@ -117,6 +128,29 @@
     
     [self.mapView addAnnotations:annotations];
     
+    // from http://kmlframework.com sample app:
+    // set zoom in next run loop.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        //
+        // Thanks for elegant code!
+        // https://gist.github.com/915374
+        //
+        MKMapRect zoomRect = MKMapRectNull;
+        id<MKAnnotation> userLocation = [self.mapView userLocation];
+        for (id<MKAnnotation> annotation in self.mapView.annotations) {
+            if (userLocation != annotation) {
+                MKMapPoint annotationPoint = MKMapPointForCoordinate(annotation.coordinate);
+                MKMapRect pointRect = MKMapRectMake(annotationPoint.x, annotationPoint.y, 0, 0);
+                if (MKMapRectIsNull(zoomRect)) {
+                    zoomRect = pointRect;
+                } else {
+                    zoomRect = MKMapRectUnion(zoomRect, pointRect);
+                }
+            }
+        }
+        [self.mapView setVisibleMapRect:zoomRect edgePadding:UIEdgeInsetsMake(10, 10, 10, 10) animated:YES];
+    });
 }
 
 #pragma mark - Table view data source

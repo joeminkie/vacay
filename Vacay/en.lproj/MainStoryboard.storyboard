@@ -198,7 +198,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ey-Rf-Qh0">
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="GG7-ji-Ta3"/>
-                                    <barButtonItem title="Map" id="ATl-aI-cXg">
+                                    <barButtonItem title="flip" id="ATl-aI-cXg">
                                         <connections>
                                             <action selector="flipView:" destination="Ssp-Jh-Q18" id="dmv-UQ-P1Z"/>
                                         </connections>
@@ -225,6 +225,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="currentLocationButton" destination="5ey-Rf-Qh0" id="Vr0-vu-xbZ"/>
                         <outlet property="currentView" destination="FxL-Mu-wKW" id="ne1-ec-YB8"/>
                         <outlet property="flipButton" destination="ATl-aI-cXg" id="ays-vB-hq2"/>
                         <outlet property="mapView" destination="ygL-It-fiY" id="Z1e-Ho-tH1"/>
@@ -246,7 +247,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VAAddMapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="addMap:"/>
-                <relationship kind="action" name="closeAddMapView:"/>
                 <relationship kind="outlet" name="addButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="urlField" candidateClass="UITextField"/>
@@ -260,6 +260,8 @@
             <relationships>
                 <relationship kind="action" name="flipView:"/>
                 <relationship kind="action" name="refreshMapInfo:"/>
+                <relationship kind="action" name="toggleCurrentLocation:"/>
+                <relationship kind="outlet" name="currentLocationButton" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="currentView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="flipButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
