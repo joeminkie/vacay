@@ -24,13 +24,13 @@
 		D81217F917448657007746AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D81217F717448657007746AC /* InfoPlist.strings */; };
 		D81217FC17448657007746AC /* VacayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D81217FB17448657007746AC /* VacayTests.m */; };
 		D8121807174489EB007746AC /* VAAddMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8121806174489EB007746AC /* VAAddMapViewController.m */; };
-		D8374CC81747F14C00282071 /* KML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8374CC71747F14C00282071 /* KML.framework */; };
 		D8374CD217480CA100282071 /* Maps.m in Sources */ = {isa = PBXBuildFile; fileRef = D8374CD117480CA100282071 /* Maps.m */; };
 		D8374CD517480D1300282071 /* VAMapListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8374CD417480D1300282071 /* VAMapListTableViewController.m */; };
 		D8374CD817486EAE00282071 /* VALocationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8374CD717486EAE00282071 /* VALocationListViewController.m */; };
 		D8374CDA174881DA00282071 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8374CD9174881DA00282071 /* MapKit.framework */; };
 		D8374CDD1748852C00282071 /* VAMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8374CDC1748852C00282071 /* VAMapViewController.m */; };
 		D8374CDF1748857100282071 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8374CDE1748857100282071 /* CoreLocation.framework */; };
+		D89653A6174B0948001386CC /* KML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89653A5174B0948001386CC /* KML.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,6 @@
 		D81217FB17448657007746AC /* VacayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VacayTests.m; sourceTree = "<group>"; };
 		D8121805174489EB007746AC /* VAAddMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAAddMapViewController.h; sourceTree = "<group>"; };
 		D8121806174489EB007746AC /* VAAddMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VAAddMapViewController.m; sourceTree = "<group>"; };
-		D8374CC71747F14C00282071 /* KML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KML.framework; path = Vacay/vendor/KML.framework; sourceTree = "<group>"; };
 		D8374CD017480CA100282071 /* Maps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Maps.h; path = Models/Maps.h; sourceTree = "<group>"; };
 		D8374CD117480CA100282071 /* Maps.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Maps.m; path = Models/Maps.m; sourceTree = "<group>"; };
 		D8374CD317480D1300282071 /* VAMapListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAMapListTableViewController.h; sourceTree = "<group>"; };
@@ -79,6 +78,7 @@
 		D8374CDB1748852B00282071 /* VAMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VAMapViewController.h; sourceTree = "<group>"; };
 		D8374CDC1748852C00282071 /* VAMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VAMapViewController.m; sourceTree = "<group>"; };
 		D8374CDE1748857100282071 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D89653A5174B0948001386CC /* KML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KML.framework; path = Vacay/vendor/KML.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,9 +86,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D89653A6174B0948001386CC /* KML.framework in Frameworks */,
 				D8374CDF1748857100282071 /* CoreLocation.framework in Frameworks */,
 				D8374CDA174881DA00282071 /* MapKit.framework in Frameworks */,
-				D8374CC81747F14C00282071 /* KML.framework in Frameworks */,
 				D81217CB17448656007746AC /* UIKit.framework in Frameworks */,
 				D81217CD17448656007746AC /* Foundation.framework in Frameworks */,
 				D81217CF17448656007746AC /* CoreGraphics.framework in Frameworks */,
@@ -130,9 +130,9 @@
 		D81217C917448656007746AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D89653A5174B0948001386CC /* KML.framework */,
 				D8374CDE1748857100282071 /* CoreLocation.framework */,
 				D8374CD9174881DA00282071 /* MapKit.framework */,
-				D8374CC71747F14C00282071 /* KML.framework */,
 				D81217CA17448656007746AC /* UIKit.framework */,
 				D81217CC17448656007746AC /* Foundation.framework */,
 				D81217CE17448656007746AC /* CoreGraphics.framework */,
@@ -447,7 +447,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vacay/Vacay-Prefix.pch";
 				INFOPLIST_FILE = "Vacay/Vacay-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -462,6 +464,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Vacay/Vacay-Prefix.pch";
 				INFOPLIST_FILE = "Vacay/Vacay-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
