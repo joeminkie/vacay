@@ -16,6 +16,8 @@
 
 @property (nonatomic, weak) KMLPlacemark *placemark;
 
+- (void)reloadMapAnnotations;
+
 @end
 
 @implementation VAViewController
@@ -29,6 +31,8 @@
     self.document = [self.mapInfo valueForKey:@"document"];
     
     self.title = self.document.name;
+    
+    [self reloadMapAnnotations];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,9 +65,6 @@
                         }
                     }
      ];
-    
-    
-    
 }
 
 - (IBAction)refreshMapInfo:(id)sender {
@@ -76,6 +77,7 @@
         
         self.mapInfo = newMapInfo;
         [self.tableView reloadData];
+        [self reloadMapAnnotations];
         
         NSLog(@"refreshed");
         // TODO reload MapView as well
@@ -85,6 +87,35 @@
     }
     
     // TODO hideSpinner
+    
+}
+
+- (void)reloadMapAnnotations {
+    
+    // remove all pins except the user location
+    // from http://stackoverflow.com/questions/3027392/how-to-delete-all-annotations-on-a-mkmapview
+    
+    id userLocation = [self.mapView userLocation];
+    NSMutableArray *pins = [[NSMutableArray alloc] initWithArray:[self.mapView annotations]];
+    if (userLocation != nil ) {
+        [pins removeObject:userLocation];
+    }
+    [self.mapView removeAnnotations:pins];
+    
+    // add all the (new) points back
+    NSMutableArray *annotations = [NSMutableArray array];
+    // assuming all features are points not shapes for MVP
+    KMLRoot *kml = (KMLRoot *)self.mapInfo[@"kml"];
+    for (KMLPlacemark *placemark in kml.placemarks) {
+        MKPointAnnotation *point = [MKPointAnnotation new];
+        KMLPoint *kmlPoint = (KMLPoint *)placemark.geometry;
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(kmlPoint.coordinate.latitude, kmlPoint.coordinate.longitude);
+        point.coordinate = coordinate;
+        point.title = placemark.name;
+        [annotations addObject:point];
+    }
+    
+    [self.mapView addAnnotations:annotations];
     
 }
 
@@ -125,6 +156,22 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark - Map view delegate
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKAnnotationView *annotationView = nil;
+    if (annotation.title) {
+        static NSString * identifier = @"testPin";
+        annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        if (annotationView == nil) {
+            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+            annotationView.canShowCallout = YES;
+        }
+        annotationView.annotation = annotation;
+    }
+    return annotationView;
 }
 
 
