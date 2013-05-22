@@ -206,7 +206,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.039380736649999998" green="0.16011646390000001" blue="0.19833275680000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="FxL-Mu-wKW" firstAttribute="leading" secondItem="TjG-np-5f5" secondAttribute="leading" type="default" id="7t9-u9-ZNn"/>
                             <constraint firstItem="5ey-Rf-Qh0" firstAttribute="bottom" secondItem="TjG-np-5f5" secondAttribute="bottom" type="default" id="H9e-jE-C3M"/>

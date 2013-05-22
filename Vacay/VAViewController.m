@@ -29,7 +29,6 @@
     self.document = [self.mapInfo valueForKey:@"document"];
     
     self.title = self.document.name;
-    //self.tableView = (UITableView *)[self.childViewControllers objectAtIndex:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,23 +41,16 @@
 
 - (IBAction)flipView:(id)sender {
     
-    //UIBarButtonItem *button = (UIBarButtonItem *)sender;
+    // TODO flip self.flipButton
     
-    //tableIsVisible = (BOOL)[self.tableView superview];
     BOOL tableIsVisible = [[[self.currentView subviews] objectAtIndex:1] isKindOfClass:[UITableView class]] ? YES : NO;
     [UIView transitionWithView:self.currentView
                       duration:1.0f
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                       options:tableIsVisible ? UIViewAnimationOptionTransitionFlipFromRight : UIViewAnimationOptionTransitionFlipFromLeft
                     animations:^(void) {
-                        //if ([self.tableView superview]) {
                         if (tableIsVisible) {
-                            //[self.tableView removeFromSuperview];
-                            //[self.currentView addSubview:self.mapView];
                             [self.currentView insertSubview:self.mapView atIndex:1];
-                            //[self.mapView setFrame:CGRectMake(0, 0, 32, 32)];
                         } else {
-                            //[self.mapView removeFromSuperview];
-                            //[self.currentView addSubview:self.tableView];
                             [self.currentView insertSubview:self.tableView atIndex:1];
                         }
                         
