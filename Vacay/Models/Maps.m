@@ -11,7 +11,11 @@
 
 @interface Maps()
 
--(void)initMapsArrays;
+- (void)initMapsArrays;
+- (void)saveImagesForMap:(NSDictionary *)mapData;
+
+@property (strong, nonatomic) NSMutableSet *iconUrls;
+@property (nonatomic) int downloadCount;
 
 @end
 
@@ -30,7 +34,9 @@
     return m;
 }
 
--(void)initMapsArrays {
+- (void)initMapsArrays {
+    
+    self.iconUrls = [[NSMutableSet alloc] init];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSArray *a = [defaults objectForKey:@"mapInfo"];
@@ -68,7 +74,7 @@
     }
 }
 
--(BOOL)addMapFromURL:(NSURL *)url withData:(NSData *)data {
+- (BOOL)addMapFromURL:(NSURL *)url withData:(NSData *)data {
     
     // parse the KML and create a document for it to make it easier to use
     KMLRoot *kml = [KMLParser parseKMLWithData:data];
@@ -122,11 +128,11 @@
                 }
                 self.maps = data;
                 
-                NSLog(@"self.maps: %@", self.maps);
-                
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                 [defaults setObject:info forKey:@"mapInfo"];
                 [defaults synchronize];
+                
+                [self saveImagesForMap:mapData];
                 
                 return YES;
                 
@@ -146,6 +152,86 @@
         return NO;
     }
     return NO;
+}
+
+- (void)saveImagesForMap:(NSDictionary *)mapData {
+    
+    KMLDocument *document = (KMLDocument *)mapData[@"document"];
+    [self.iconUrls removeAllObjects];
+    
+    for (KMLStyle *style in document.styleSelectors) {
+        if ([style.iconStyle.icon.href isEqualToString:@""] == NO) {
+            [self.iconUrls addObject:style.iconStyle.icon.href];
+        }
+    }
+    NSLog(@"%d: set: %@", [self.iconUrls count], self.iconUrls);
+    
+    self.downloadCount = 0;
+    __block int errorCount = 0;
+    NSOperationQueue *queue = [NSOperationQueue mainQueue];
+    
+    for (NSString *iconUrl in self.iconUrls) {
+        NSURL *url = [NSURL URLWithString:iconUrl];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        
+        [NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                        
+            NSString *fileURL = [response.URL.resourceSpecifier stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
+            NSString *filePath = [[document.name stringByAppendingString:@"/images"] stringByAppendingString:fileURL];
+            NSString *fileName = response.URL.lastPathComponent;
+            
+            filePath = [filePath stringByReplacingOccurrencesOfString:fileName withString:@""];
+            
+            self.downloadCount++;
+            
+            if (data) {
+                
+                // use/create the Application Support directory
+                NSFileManager *fileManager = [[NSFileManager alloc] init];
+                NSError *error = nil;
+                NSURL *supportURL = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:&error];
+                
+                NSURL *iconDirectory = [[supportURL URLByAppendingPathComponent:@"KML/"]URLByAppendingPathComponent:filePath];
+                error = nil;
+                BOOL directoryWasCreated = [fileManager createDirectoryAtURL:iconDirectory withIntermediateDirectories:YES attributes:nil error:&error];
+                if (directoryWasCreated == NO) {
+                    
+                    NSLog(@"error creating icon directory");
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Directory Error" message:@"There was an error creating/accessing the icon directory" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alert show];
+                    
+                } else {
+                    
+                    // save the icon file to disk using it's name as the file name
+                    error = nil;
+                    BOOL wroteFile = [data writeToURL:[iconDirectory URLByAppendingPathComponent:fileName] atomically:YES];
+                    if (wroteFile) {
+                        // TODO anything?
+                    } else {
+                        NSLog(@"error writing file");
+                        
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error Writing File" message:@"There was an error writing the icon image to disk" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                        [alert show];
+                    }
+                    
+                }
+                
+            } else {
+                errorCount++;
+                NSLog(@"connection error for request: %@", request);
+            }
+            
+            if (self.downloadCount == [self.iconUrls count]) {
+                if (errorCount) {
+                    NSLog(@"there was %d error(s)", errorCount);
+                } else {
+                    NSLog(@"all images downloaded successfully");
+                }
+            }
+        }];
+
+    }
+    
 }
 
 - (NSDictionary *)refreshMapInfo:(NSDictionary *)info {
