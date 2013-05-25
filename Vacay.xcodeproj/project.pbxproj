@@ -13,9 +13,6 @@
 		D81217D517448656007746AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D81217D317448656007746AC /* InfoPlist.strings */; };
 		D81217D717448656007746AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D81217D617448656007746AC /* main.m */; };
 		D81217DB17448656007746AC /* VAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D81217DA17448656007746AC /* VAAppDelegate.m */; };
-		D81217DD17448656007746AC /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D81217DC17448656007746AC /* Default.png */; };
-		D81217DF17448656007746AC /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D81217DE17448656007746AC /* Default@2x.png */; };
-		D81217E117448656007746AC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D81217E017448656007746AC /* Default-568h@2x.png */; };
 		D81217E417448656007746AC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81217E217448656007746AC /* MainStoryboard.storyboard */; };
 		D81217E717448656007746AC /* VAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D81217E617448656007746AC /* VAViewController.m */; };
 		D81217EF17448657007746AC /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D81217EE17448657007746AC /* SenTestingKit.framework */; };
@@ -31,6 +28,10 @@
 		D89653A6174B0948001386CC /* KML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89653A5174B0948001386CC /* KML.framework */; };
 		D89653A917512D9A001386CC /* MKPointAnnotation+Vacay.m in Sources */ = {isa = PBXBuildFile; fileRef = D89653A817512D99001386CC /* MKPointAnnotation+Vacay.m */; };
 		D8F3FF941751593D00B2B93E /* VADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F3FF931751593D00B2B93E /* VADetailViewController.m */; };
+		D8F3FFA917516AB200B2B93E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F3FFA617516AB200B2B93E /* Default-568h@2x.png */; };
+		D8F3FFAA17516AB200B2B93E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F3FFA717516AB200B2B93E /* Default@2x.png */; };
+		D8F3FFAB17516AB200B2B93E /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F3FFA817516AB200B2B93E /* icon114.png */; };
+		D8F3FFB117516B2300B2B93E /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F3FFB017516B2300B2B93E /* icon57.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,9 +55,6 @@
 		D81217D817448656007746AC /* Vacay-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vacay-Prefix.pch"; sourceTree = "<group>"; };
 		D81217D917448656007746AC /* VAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAAppDelegate.h; sourceTree = "<group>"; };
 		D81217DA17448656007746AC /* VAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAAppDelegate.m; sourceTree = "<group>"; };
-		D81217DC17448656007746AC /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		D81217DE17448656007746AC /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		D81217E017448656007746AC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		D81217E317448656007746AC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		D81217E517448656007746AC /* VAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VAViewController.h; sourceTree = "<group>"; };
 		D81217E617448656007746AC /* VAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VAViewController.m; sourceTree = "<group>"; };
@@ -79,6 +77,10 @@
 		D89653A817512D99001386CC /* MKPointAnnotation+Vacay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKPointAnnotation+Vacay.m"; path = "categories/MKPointAnnotation+Vacay.m"; sourceTree = "<group>"; };
 		D8F3FF921751593D00B2B93E /* VADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VADetailViewController.h; sourceTree = "<group>"; };
 		D8F3FF931751593D00B2B93E /* VADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VADetailViewController.m; sourceTree = "<group>"; };
+		D8F3FFA617516AB200B2B93E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
+		D8F3FFA717516AB200B2B93E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "images/Default@2x.png"; sourceTree = "<group>"; };
+		D8F3FFA817516AB200B2B93E /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon114.png; path = images/icon114.png; sourceTree = "<group>"; };
+		D8F3FFB017516B2300B2B93E /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon57.png; path = images/icon57.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				D8F3FF931751593D00B2B93E /* VADetailViewController.m */,
 				D81217E517448656007746AC /* VAViewController.h */,
 				D81217E617448656007746AC /* VAViewController.m */,
+				D8F3FFA517516A9100B2B93E /* images */,
 				D89653AA17512D9E001386CC /* categories */,
 				D812185017449920007746AC /* vendor */,
 				D81217D117448656007746AC /* Supporting Files */,
@@ -170,9 +173,6 @@
 				D81217D317448656007746AC /* InfoPlist.strings */,
 				D81217D617448656007746AC /* main.m */,
 				D81217D817448656007746AC /* Vacay-Prefix.pch */,
-				D81217DC17448656007746AC /* Default.png */,
-				D81217DE17448656007746AC /* Default@2x.png */,
-				D81217E017448656007746AC /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -219,6 +219,17 @@
 				D89653A817512D99001386CC /* MKPointAnnotation+Vacay.m */,
 			);
 			name = categories;
+			sourceTree = "<group>";
+		};
+		D8F3FFA517516A9100B2B93E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D8F3FFA617516AB200B2B93E /* Default-568h@2x.png */,
+				D8F3FFA717516AB200B2B93E /* Default@2x.png */,
+				D8F3FFA817516AB200B2B93E /* icon114.png */,
+				D8F3FFB017516B2300B2B93E /* icon57.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,10 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81217D517448656007746AC /* InfoPlist.strings in Resources */,
-				D81217DD17448656007746AC /* Default.png in Resources */,
-				D81217DF17448656007746AC /* Default@2x.png in Resources */,
-				D81217E117448656007746AC /* Default-568h@2x.png in Resources */,
 				D81217E417448656007746AC /* MainStoryboard.storyboard in Resources */,
+				D8F3FFA917516AB200B2B93E /* Default-568h@2x.png in Resources */,
+				D8F3FFAA17516AB200B2B93E /* Default@2x.png in Resources */,
+				D8F3FFAB17516AB200B2B93E /* icon114.png in Resources */,
+				D8F3FFB117516B2300B2B93E /* icon57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
