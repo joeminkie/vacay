@@ -222,10 +222,19 @@
             }
             
             if (self.downloadCount == [self.iconUrls count]) {
+                
+                NSString *message;
+                
                 if (errorCount) {
                     NSLog(@"there was %d error(s)", errorCount);
+                    message = [@"**title**: At least one of the pin images wasn't able to be saved locally. Please try again." stringByReplacingOccurrencesOfString:@"**title**" withString:document.name];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alert show];
                 } else {
                     NSLog(@"all images downloaded successfully");
+                    message = [@"The kml file and pin images were downloaded and saved locally for **title**" stringByReplacingOccurrencesOfString:@"**title**" withString:document.name];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alert show];
                 }
             }
         }];
