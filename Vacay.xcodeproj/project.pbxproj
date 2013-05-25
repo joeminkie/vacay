@@ -30,6 +30,7 @@
 		D8374CDF1748857100282071 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8374CDE1748857100282071 /* CoreLocation.framework */; };
 		D89653A6174B0948001386CC /* KML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D89653A5174B0948001386CC /* KML.framework */; };
 		D89653A917512D9A001386CC /* MKPointAnnotation+Vacay.m in Sources */ = {isa = PBXBuildFile; fileRef = D89653A817512D99001386CC /* MKPointAnnotation+Vacay.m */; };
+		D8F3FF941751593D00B2B93E /* VADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F3FF931751593D00B2B93E /* VADetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		D89653A5174B0948001386CC /* KML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KML.framework; path = Vacay/vendor/KML.framework; sourceTree = "<group>"; };
 		D89653A717512D99001386CC /* MKPointAnnotation+Vacay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MKPointAnnotation+Vacay.h"; path = "categories/MKPointAnnotation+Vacay.h"; sourceTree = "<group>"; };
 		D89653A817512D99001386CC /* MKPointAnnotation+Vacay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MKPointAnnotation+Vacay.m"; path = "categories/MKPointAnnotation+Vacay.m"; sourceTree = "<group>"; };
+		D8F3FF921751593D00B2B93E /* VADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VADetailViewController.h; sourceTree = "<group>"; };
+		D8F3FF931751593D00B2B93E /* VADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VADetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,8 @@
 				D8121806174489EB007746AC /* VAAddMapViewController.m */,
 				D8374CD317480D1300282071 /* VAMapListTableViewController.h */,
 				D8374CD417480D1300282071 /* VAMapListTableViewController.m */,
+				D8F3FF921751593D00B2B93E /* VADetailViewController.h */,
+				D8F3FF931751593D00B2B93E /* VADetailViewController.m */,
 				D81217E517448656007746AC /* VAViewController.h */,
 				D81217E617448656007746AC /* VAViewController.m */,
 				D89653AA17512D9E001386CC /* categories */,
@@ -334,6 +339,7 @@
 				D8374CD217480CA100282071 /* Maps.m in Sources */,
 				D8374CD517480D1300282071 /* VAMapListTableViewController.m in Sources */,
 				D89653A917512D9A001386CC /* MKPointAnnotation+Vacay.m in Sources */,
+				D8F3FF941751593D00B2B93E /* VADetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

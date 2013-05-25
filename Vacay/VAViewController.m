@@ -9,6 +9,7 @@
 #import "VAViewController.h"
 #import "Maps.h"
 #import "MKPointAnnotation+Vacay.h"
+#import "VADetailViewController.h"
 
 @interface VAViewController ()
 
@@ -16,7 +17,7 @@
 
 @property (nonatomic, weak) KMLDocument *document;
 @property (nonatomic, weak) Maps *MapModel;
-
+@property (nonatomic, weak) VADetailViewController *detailView;
 @property (nonatomic, strong) NSString *fileDirectory;
 
 - (void)reloadMapAnnotations;
@@ -53,6 +54,13 @@
 - (void)viewDidAppear:(BOOL)animated {
     [self reloadMapAnnotations];
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    NSIndexPath *tableSelection = [self.tableView indexPathForSelectedRow];
+    [self.tableView deselectRowAtIndexPath:tableSelection animated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -179,6 +187,18 @@
     });
 }
 
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+        
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        self.detailView = (VADetailViewController *)segue.destinationViewController;
+        self.detailView.detailInfo = (KMLPlacemark *)[self.document.features objectAtIndex:path.row];
+        
+    }
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -206,17 +226,6 @@
 }
 
 #pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
 #pragma mark - Map view delegate
 
