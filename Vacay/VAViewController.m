@@ -44,9 +44,9 @@
     
     // add the currentLocation button
     self.currentLocationButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
-    NSMutableArray *toolbarButtons = [NSMutableArray arrayWithArray:self.toolbar.items];
-    [toolbarButtons insertObject:self.currentLocationButton atIndex:0];
-    self.toolbar.items = toolbarButtons;
+    //NSMutableArray *toolbarButtons = [NSMutableArray arrayWithArray:self.toolbar.items];
+    //[toolbarButtons insertObject:self.currentLocationButton atIndex:0];
+    //self.toolbar.items = toolbarButtons;
     
 }
 
@@ -80,7 +80,24 @@
                     }
                     completion:^(BOOL finished) {
                         if (finished) {
-                            // TODO anything?
+                            NSMutableArray *toolbarButtons = [NSMutableArray arrayWithArray:self.toolbar.items];
+                            // opposite since this is after the animation
+                            if (!tableIsVisible) {
+                                // map is visible so show current location button
+                                //self.currentLocationButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
+                                
+                                
+                                //if ([[toolbarButtons objectAtIndex:0] isKindOfClass:[MKUserTrackingBarButtonItem class]]) {
+                                //    [toolbarButtons removeObjectAtIndex:0];
+                                //}
+                                [toolbarButtons removeObject:self.currentLocationButton];
+                                                               
+                            } else {
+                                // map is NOT visible so don't show the current location button
+                                [toolbarButtons insertObject:self.currentLocationButton atIndex:0];
+
+                            }
+                            self.toolbar.items = toolbarButtons;
                         }
                     }
      ];
@@ -205,9 +222,14 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     
+    // don't do anythign special for the current location pin
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
     MKAnnotationView *annotationView = nil;
     MKPointAnnotation *point = annotation;
-    
+    // use the icon path as identifier
     annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:point.iconPath];
     if (annotationView == nil) {
         
