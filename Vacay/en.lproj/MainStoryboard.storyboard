@@ -252,9 +252,23 @@
                     <view key="view" contentMode="scaleToFill" id="8e2-3L-OFX">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BB3-cn-in7">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BB3-cn-in7" firstAttribute="leading" secondItem="8e2-3L-OFX" secondAttribute="leading" type="default" id="7A2-Fd-me6"/>
+                            <constraint firstItem="BB3-cn-in7" firstAttribute="top" secondItem="8e2-3L-OFX" secondAttribute="top" type="default" id="oyQ-It-3nA"/>
+                            <constraint firstItem="BB3-cn-in7" firstAttribute="trailing" secondItem="8e2-3L-OFX" secondAttribute="trailing" type="default" id="w9V-xR-M9j"/>
+                            <constraint firstItem="BB3-cn-in7" firstAttribute="bottom" secondItem="8e2-3L-OFX" secondAttribute="bottom" type="default" id="wSK-p0-oPn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="63b-W2-m9e"/>
+                    <connections>
+                        <outlet property="webView" destination="BB3-cn-in7" id="Qjo-UE-HsN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWB-5i-Vdm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -269,7 +283,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VAAddMapViewController.h"/>
             <relationships>
                 <relationship kind="action" name="addMap:"/>
-                <relationship kind="action" name="closeAddMapView:"/>
                 <relationship kind="outlet" name="addButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="urlField" candidateClass="UITextField"/>
@@ -277,6 +290,9 @@
         </class>
         <class className="VADetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VADetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
         </class>
         <class className="VAMapListTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/VAMapListTableViewController.h"/>

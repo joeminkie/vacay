@@ -12,5 +12,6 @@
 @interface VADetailViewController : UIViewController
 
 @property (nonatomic, weak) KMLPlacemark *detailInfo;
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
 
 @end

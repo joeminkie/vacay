@@ -29,6 +29,8 @@
 	// Do any additional setup after loading the view.
     
     self.title = self.detailInfo.name;
+    
+    [self.webView loadHTMLString:self.detailInfo.descriptionValue baseURL:nil];
 }
 
 - (void)didReceiveMemoryWarning
