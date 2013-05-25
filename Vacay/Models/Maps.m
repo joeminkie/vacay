@@ -191,7 +191,7 @@
                 NSError *error = nil;
                 NSURL *supportURL = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:&error];
                 
-                NSURL *iconDirectory = [[supportURL URLByAppendingPathComponent:@"KML/"]URLByAppendingPathComponent:filePath];
+                NSURL *iconDirectory = [[supportURL URLByAppendingPathComponent:@"KML/"] URLByAppendingPathComponent:filePath];
                 error = nil;
                 BOOL directoryWasCreated = [fileManager createDirectoryAtURL:iconDirectory withIntermediateDirectories:YES attributes:nil error:&error];
                 if (directoryWasCreated == NO) {
