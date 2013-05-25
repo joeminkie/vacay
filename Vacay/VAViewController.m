@@ -8,6 +8,7 @@
 
 #import "VAViewController.h"
 #import "Maps.h"
+#import "MKPointAnnotation+Vacay.h"
 
 @interface VAViewController ()
 
@@ -16,7 +17,7 @@
 @property (nonatomic, weak) KMLDocument *document;
 @property (nonatomic, weak) Maps *MapModel;
 
-@property (nonatomic, weak) KMLPlacemark *placemark;
+@property (nonatomic, strong) NSString *fileDirectory;
 
 - (void)reloadMapAnnotations;
 
@@ -33,6 +34,13 @@
     self.document = [self.mapInfo valueForKey:@"document"];
     
     self.title = self.document.name;
+    
+    // set the directory path for the various map files/images
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    NSError *error = nil;
+    NSURL *supportURL = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:&error];
+    self.fileDirectory = [[[supportURL URLByAppendingPathComponent:@"KML/"] absoluteString] stringByReplacingOccurrencesOfString:@"file://localhost" withString:@""];
+    self.fileDirectory = [self.fileDirectory stringByReplacingOccurrencesOfString:@"%20" withString:@" "];
     
     // add the currentLocation button
     self.currentLocationButton = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
@@ -123,6 +131,7 @@
         CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(kmlPoint.coordinate.latitude, kmlPoint.coordinate.longitude);
         point.coordinate = coordinate;
         point.title = placemark.name;
+        point.iconPath = placemark.style.iconStyle.icon.href;
         [annotations addObject:point];
     }
     
@@ -195,16 +204,27 @@
 #pragma mark - Map view delegate
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    
     MKAnnotationView *annotationView = nil;
-    if (annotation.title) {
-        static NSString * identifier = @"testPin";
-        annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-        if (annotationView == nil) {
-            annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-            annotationView.canShowCallout = YES;
-        }
-        annotationView.annotation = annotation;
+    MKPointAnnotation *point = annotation;
+    
+    annotationView = [mapView dequeueReusableAnnotationViewWithIdentifier:point.iconPath];
+    if (annotationView == nil) {
+        
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:point.iconPath];
+        
+        NSURL *url = [NSURL URLWithString:point.iconPath];
+        NSString *fileURL = [url.resourceSpecifier stringByReplacingOccurrencesOfString:@"//" withString:@"/"];
+        NSString *filePath = [[self.document.name stringByAppendingString:@"/images"] stringByAppendingString:fileURL];
+        NSString *fullIconPath = [self.fileDirectory stringByAppendingString:filePath];
+        annotationView.image = [UIImage imageWithContentsOfFile:fullIconPath];
+        
+        // TODO if file doesn't exist use a default
+        
+        annotationView.canShowCallout = YES;
     }
+    annotationView.annotation = annotation;
+    
     return annotationView;
 }
 
